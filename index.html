@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación del Algoritmo de Dekker</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h1 class="titulo-animado">Simulación del Algoritmo de Dekker</h1>
+    <div class="container">
+        <div class="cliente">
+            <div id="cliente1">
+                <h2>Cliente 1</h2>
+                <button onclick="solicitarAtencion(1)">Solicitar Atención</button>
+                <p id="estadoCliente1">Esperando</p>
+            </div>
+            <div class="codigo-box">
+                <h3>Proceso 1:</h3>
+                <pre class="code">
+<code>
+/* Esperar hasta que sea tu turno */
+while (turno !== 1);
+
+/* Sección crítica */
+// Código crítico del Proceso 1
+
+/* Pasar el turno */
+turno = 2;
+</code>
+                </pre>
+            </div>
+        </div>
+        <div class="cliente">
+            <div id="cliente2">
+                <h2>Cliente 2</h2>
+                <button onclick="solicitarAtencion(2)">Solicitar Atención</button>
+                <p id="estadoCliente2">Esperando</p>
+                <p id="mensajeError" style="color: red;"></p>
+            </div>
+            <div class="codigo-box">
+                <h3>Proceso 2:</h3>
+                <pre class="code">
+<code>
+/* Esperar hasta que sea tu turno */
+while (turno !== 2);
+
+/* Sección crítica */
+// Código crítico del Proceso 2
+
+/* Pasar el turno */
+turno = 1;
+</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="/scripts.js"></script>
+</body>
+
+</html>

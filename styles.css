@@ -1,0 +1,124 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: #282a36;
+    color: #f8f8f2;
+    padding-bottom: 150px;
+}
+
+.titulo-animado {
+    animation: tituloAnimado 2s infinite;
+    font-size: 2em;
+    margin-top: 20px;
+    color: #50fa7b;
+}
+
+@keyframes tituloAnimado {
+    0%, 100% {
+        color: #50fa7b;
+        transform: scale(1);
+    }
+    50% {
+        color: #ff79c6;
+        transform: scale(1.1);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.cliente {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.cliente > div {
+    width: 200px;
+    border: 2px solid #6272a4;
+    padding: 20px;
+    background-color: #44475a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cliente > .codigo-box {
+    width: 300px;
+}
+
+.cliente:hover > div {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #bd93f9;
+    color: #f8f8f2;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff79c6;
+}
+
+.atendido {
+    background-color: #44475a;
+    border-color: #50fa7b;
+    animation: brillo 1s ease infinite alternate;
+}
+
+@keyframes brillo {
+    0% { box-shadow: 0 0 5px rgba(80, 250, 123, 0.8); }
+    100% { box-shadow: 0 0 20px rgba(80, 250, 123, 0); }
+}
+
+.codigo-box {
+    background-color: #282a36;
+    border: 2px solid #6272a4;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+pre.code {
+    white-space: pre-wrap;
+    color: #f8f8f2;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.token.comment {
+    color: #6272a4;
+}
+
+.token.keyword {
+    color: #ff79c6;
+}
+
+.token.function {
+    color: #50fa7b;
+}
+
+.token.punctuation {
+    color: #f8f8f2;
+}
